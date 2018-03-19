@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 1
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp-container
+        image: nginxdemos/hello:plain-text
+        ports:
+        - name: web
+          containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: web
+        livenessProbe:
+          httpGet:
+            path: /
+            port: web
+        resources:
+          requests:
+            memory: 6Mi
+            cpu: 30m
+          limits:
+            memory: 10Mi
+            cpu: 80m

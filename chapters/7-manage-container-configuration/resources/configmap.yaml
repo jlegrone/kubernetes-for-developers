@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myapp-configmap
+  labels:
+    app: myapp
+data:
+  app.js: |
+    const http = require('http');
+
+    const port = process.env.PORT;
+    const app = new http.Server();
+
+    app.on('request', (req, res) => {
+      console.info(`Handling request to ${req.url}`);
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.write('Hello kubernetes!');
+      res.end('\n');
+    });
+
+    app.listen(port, () => {
+      console.info(`Listening on port ${port}`);
+    });
