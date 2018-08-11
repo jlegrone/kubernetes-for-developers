@@ -13,7 +13,7 @@ The goals of this chapter are to:
 #### Create Deployment and Service:
 
 ```bash
-kubectl create -f resources
+kubectl apply -f resources
 ```
 
 #### View deployment information:

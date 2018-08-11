@@ -6,7 +6,7 @@ In this example we will define a Pod capable of serving HTTP traffic and use por
 
 #### Create Pod:
 ```bash
-kubectl create -f resources/pod.yaml
+kubectl apply -f resources/pod.yaml
 ```
 
 #### Connect to the Pod locally:

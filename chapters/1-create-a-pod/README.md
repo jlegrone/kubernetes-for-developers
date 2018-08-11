@@ -8,7 +8,7 @@ In this example we will create a Pod in our cluster, read its logs, and then del
 
 #### Create Pod:
 ```bash
-kubectl create -f resources/pod.yaml
+kubectl apply -f resources/pod.yaml
 ```
 
 #### Watch the logs:

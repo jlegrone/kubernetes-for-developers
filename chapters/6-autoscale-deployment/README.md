@@ -9,7 +9,7 @@ In order to use HorizontalPodAutoscaler resources, you must define compute resou
 #### Create Deployment, Service, and HorizontalPodAutoscaler:
 
 ```bash
-kubectl create -f resources
+kubectl apply -f resources
 ```
 
 #### Apply load:

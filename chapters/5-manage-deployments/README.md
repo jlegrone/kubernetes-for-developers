@@ -7,7 +7,7 @@ In this example we will update our previous deployment to use a new image versio
 #### Re-create the deployment from part 4:
 
 ```bash
-kubectl create -f ../4-ensure-high-availability/resources
+kubectl apply -f ../4-ensure-high-availability/resources
 ```
 
 Verify that the deployment has been rolled out:
@@ -22,7 +22,7 @@ minikube service myapp-svc --url
 
 #### Update deployment:
 
-Note: We use `apply` here since the deployment resource we are updating already exists.
+Note: We must use `apply` here since the deployment resource we are updating already exists.
 
 ```bash
 kubectl apply -f resources/updated-deployment.yaml && kubectl rollout status deployment myapp-deployment
