@@ -24,6 +24,28 @@ minikube service myapp-svc --url
 
 Note: We must use `apply` here since the deployment resource we are updating already exists.
 
+First, you can inspect the diff that we will be applying:
+
+```bash
+git diff --no-index ../4-ensure-high-availability/resources/deployment.yaml resources/updated-deployment.yaml
+```
+
+```diff
+diff --git a/../4-ensure-high-availability/resources/deployment.yaml b/resources/updated-deployment.yaml
+index 07ec987..9d722bd 100644
+--- a/../4-ensure-high-availability/resources/deployment.yaml
++++ b/resources/updated-deployment.yaml
+@@ -17,7 +17,7 @@ spec:
+     spec:
+       containers:
+       - name: myapp-container
+-        image: nginxdemos/hello:plain-text
++        image: nginxdemos/hello:latest
+         ports:
+         - name: web
+           containerPort: 80
+```
+
 ```bash
 kubectl apply -f resources/updated-deployment.yaml && kubectl rollout status deployment myapp-deployment
 ```

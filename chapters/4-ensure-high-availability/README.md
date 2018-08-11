@@ -54,6 +54,4 @@ https://kubernetes.io/docs/concepts/workloads/controllers/deployment
 
 https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes
 
-https://kubernetes.io/docs/concepts/configuration/assign-pod-node
-
 https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_rollout
