@@ -4,6 +4,13 @@ A Pod is the basic building block of Kubernetes – the smallest and simplest un
 
 In this example we will create a Pod in our cluster, read its logs, and then delete it.
 
+## Note
+
+> A `Pod` is the first of many resource types that we will interact with in Kubernetes. `kubectl explain` is a great way to quickly take a look at the latest documentation for any given resource.
+```bash
+kubectl explain pod
+```
+
 ## Instructions
 
 #### Create Pod:
