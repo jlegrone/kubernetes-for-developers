@@ -8,7 +8,7 @@ In this example we will create a Pod in our cluster, read its logs, and then del
 
 > A `Pod` is the first of many resource types that we will interact with in Kubernetes. `kubectl explain` is a great way to quickly take a look at the latest documentation for any given resource.
 ```bash
-kubectl explain pod
+kubectl explain pods
 ```
 
 ## Instructions
@@ -16,6 +16,19 @@ kubectl explain pod
 #### Create Pod:
 ```bash
 kubectl apply -f resources/pod.yaml
+```
+
+It's worth noting that Kubernetes will add some additional fields to the pod that we submit to the cluster. To see these changes run:
+
+```bash
+kubectl get -f resources/pod.yaml -o yaml | git diff --no-index resources/pod.yaml -
+```
+
+The main things to look out for are the additional fields in the `spec` stanza (for default and computed values), and a new `status` stanza which is read-only and used to represent the state of the pod.
+
+To get more information about a field, you can pass the field path to `kubectl explain`:
+```bash
+kubectl explain pods.spec.containers.imagePullPolicy
 ```
 
 #### Watch the logs:
