@@ -4,11 +4,31 @@ A Pod is the basic building block of Kubernetes – the smallest and simplest un
 
 In this example we will create a Pod in our cluster, read its logs, and then delete it.
 
+## Note
+
+> A `Pod` is the first of many resource types that we will interact with in Kubernetes. `kubectl explain` is a great way to quickly take a look at the latest documentation for any given resource.
+```bash
+kubectl explain pods
+```
+
 ## Instructions
 
 #### Create Pod:
 ```bash
-kubectl create -f resources/pod.yaml
+kubectl apply -f resources/pod.yaml
+```
+
+It's worth noting that Kubernetes will add some additional fields to the pod that we submit to the cluster. To see these changes run:
+
+```bash
+kubectl get -f resources/pod.yaml -o yaml | git diff --no-index resources/pod.yaml -
+```
+
+The main things to look out for are the additional fields in the `spec` stanza (for default and computed values), and a new `status` stanza which is read-only and used to represent the state of the pod.
+
+To get more information about a field, you can pass the field path to `kubectl explain`:
+```bash
+kubectl explain pods.spec.containers.imagePullPolicy
 ```
 
 #### Watch the logs:
@@ -25,6 +45,6 @@ kubectl delete pod myapp-pod
 
 https://kubernetes.io/docs/concepts/workloads/pods/pod-overview
 
-https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_create
+https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
 
-https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs
+https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs

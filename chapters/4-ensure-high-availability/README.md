@@ -13,7 +13,7 @@ The goals of this chapter are to:
 #### Create Deployment and Service:
 
 ```bash
-kubectl create -f resources
+kubectl apply -f resources
 ```
 
 #### View deployment information:
@@ -54,6 +54,4 @@ https://kubernetes.io/docs/concepts/workloads/controllers/deployment
 
 https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes
 
-https://kubernetes.io/docs/concepts/configuration/assign-pod-node
-
-https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_rollout
+https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#rollout

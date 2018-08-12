@@ -8,7 +8,7 @@ In this example we will define a Pod capable of serving HTTP traffic using the `
 
 #### Create Deployment, Service, and ConfigMap:
 ```bash
-kubectl create -f resources
+kubectl apply -f resources
 ```
 
 Visit the service URL:

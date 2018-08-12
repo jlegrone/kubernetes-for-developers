@@ -11,7 +11,7 @@ In this example we will create a Service to route traffic to the Pod running our
 Note: 
 
 ```bash
-kubectl create -f resources
+kubectl apply -f resources
 ```
 
 #### Visit the service URL:

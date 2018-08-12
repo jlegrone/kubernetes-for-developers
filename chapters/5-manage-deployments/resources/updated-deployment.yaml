@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myapp-deployment
+  labels:
+    app: myapp
 spec:
   selector:
     matchLabels:
@@ -19,11 +21,17 @@ spec:
         ports:
         - name: web
           containerPort: 80
+        # Readiness probe marks Pod as ready to accept traffic after success
+        # Ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#define-readiness-probes
         readinessProbe:
           httpGet:
             path: /
             port: web
+        # Liveness probe runs every `periodSeconds`; if liveliness probes fail the Pod is
+        #   understood to be unhealthy and another will be created to replace it.
+        # Ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#define-a-liveness-http-request
         livenessProbe:
           httpGet:
             path: /
             port: web
+          periodSeconds: 5

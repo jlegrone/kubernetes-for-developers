@@ -15,22 +15,6 @@ spec:
       labels:
         app: myapp
     spec:
-      # Request that Pods created by this deployment be run on separate nodes in the cluster
-      #   Note that the `affinity` section of a Deployment spec is optional.
-      # Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node
-      affinity:
-        podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                - key: app
-                  operator: In
-                  values:
-                  - myapp
-              topologyKey: kubernetes.io/hostname
-      # Container(s) to be run in Pod (Same spec as Chapter 3)
       containers:
       - name: myapp-container
         image: nginxdemos/hello:plain-text
