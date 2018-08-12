@@ -74,4 +74,4 @@ kubectl delete -f ../4-ensure-high-availability/resources
 
 ## References
 
-https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_apply/
+https://kubernetes.io/docs/concepts/workloads/controllers/deployment

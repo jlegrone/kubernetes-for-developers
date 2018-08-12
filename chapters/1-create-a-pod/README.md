@@ -45,6 +45,6 @@ kubectl delete pod myapp-pod
 
 https://kubernetes.io/docs/concepts/workloads/pods/pod-overview
 
-https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_create
+https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
 
-https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs
+https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs
