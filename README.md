@@ -8,6 +8,7 @@ This is an interactive tutorial; you will need a Minikube cluster running locall
 1. [Install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 1. `minikube start`
 1. `minikube addons enable heapster`
+1. `minikube addons enable metrics-server`
 
 You will also need the metrics API installed if it is not already:
 https://kubernetes.io/docs/tasks/debug-application-cluster/core-metrics-pipeline/
